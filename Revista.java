@@ -17,7 +17,8 @@ public class Revista extends Produto {
 
   @Override
   public String descricaoProduto() {
-    return "Revista [titulo:" + titulo + "\neditora: " + editora + "\n edicao:" + edicao + "\n categoria: " + categoria
+    return "Revista [titulo:" + getTitulo() + "\neditora: " + editora + "\n edicao:" + edicao + "\n categoria: "
+        + categoria
         + "\n preco: " + preco + "\n quantidade: " + quantidade + "]";
   }
 
@@ -27,6 +28,12 @@ public class Revista extends Produto {
 
   public void setArtigoPrincipal(String artigoPrincipal) {
     this.artigoPrincipal = artigoPrincipal;
+  }
+
+  @Override
+  public void editarProduto() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'editarProduto'");
   }
 
 }

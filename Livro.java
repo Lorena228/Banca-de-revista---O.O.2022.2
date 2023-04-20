@@ -1,8 +1,10 @@
-public class Gibi extends Produto {
+public class Livro extends Produto {
 
-  private String tipo;
+  private int npag;
+  private String tipoCapa;
 
-  public Gibi(String titulo, String editora, int edicao, String categoria, float preco, int quantidade, String tipo) {
+  public Livro(String titulo, String editora, int edicao, String categoria, float preco, int quantidade, int npag,
+      String tipoCapa) {
     super(titulo, editora, edicao, categoria, preco, quantidade);
     this.titulo = titulo;
     this.editora = editora;
@@ -10,15 +12,24 @@ public class Gibi extends Produto {
     this.categoria = categoria;
     this.preco = preco;
     this.quantidade = quantidade;
-    this.tipo = tipo;
+    this.npag = npag;
+    this.tipoCapa = tipoCapa;
   }
 
-  public String getTipo() {
-    return tipo;
+  public int getNpag() {
+    return npag;
   }
 
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
+  public void setNpag(int npag) {
+    this.npag = npag;
+  }
+
+  public String getTipoCapa() {
+    return tipoCapa;
+  }
+
+  public void setTipoCapa(String tipoCapa) {
+    this.tipoCapa = tipoCapa;
   }
 
   @Override

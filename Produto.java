@@ -1,4 +1,4 @@
-public class Produto {
+public abstract class Produto {
   protected String titulo;
   protected String editora;
   protected int edicao;
@@ -15,13 +15,9 @@ public class Produto {
     this.quantidade = quantidade;
   }
 
-  public void editarProduto() {
+  public abstract void editarProduto();
 
-  }
-
-  public void descricaoProduto() {
-
-  }
+  public abstract String descricaoProduto();
 
   public String getTitulo() {
     return titulo;
