@@ -37,7 +37,7 @@ public class Livro extends Produto {
     return "Livro [titulo:" + titulo + "\neditora: " + editora + "\nedicao:" + edicao + "\ncategoria: "
         + categoria
         + "\npreco: " + preco + "\nquantidade: " + quantidade + "\nN° de páginas: " + npag + "\ntipo de capa:"
-        + tipoCapa + "]";
+        + tipoCapa + "]\n";
   }
 
 }

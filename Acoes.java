@@ -1,10 +1,10 @@
 public interface Acoes {
 
-    public double calcComissao(double valorVenda);
+    public float calcComissao(float valorVenda);
 
-    public void addCredito(double valor);
+    public void addCredito(float valor);
 
-    public void gastarCredito(double valor);
+    public void gastarCredito(float valor);
 
     public void adcProd(Estoque listaProduto);
 

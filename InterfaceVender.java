@@ -1,9 +1,9 @@
 public interface InterfaceVender {
-  public void venda();
 
-  public void atualizarPreco();
-
-  public void calcDesconto();
+  public void atualizarPreco(float novoValor);
 
   public void descntEstoque();
+
+  public void realizarVenda();
+
 }

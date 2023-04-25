@@ -3,55 +3,45 @@ import java.util.ArrayList;
 
 public class Cliente extends Pessoa {
 
-    private double creditos;
-    private ArrayList<String> prodcomp;
+    private float creditos;
+    private ArrayList<Produto> prodcomp;
 
-    private float valor;
-    private Produto produto;
-
-    public Cliente(String nome, int cpf) {
+    public Cliente(String nome, String cpf) {
         super(nome, cpf);
         this.creditos = 0;
-        this.prodcomp = new ArrayList<String>();
+        this.prodcomp = new ArrayList<Produto>();
     }
 
-    public ArrayList<String> getProdComp() {
+    public ArrayList<Produto> getProdComp() {
         return prodcomp;
     }
 
-    public void addCredito(Acoes acoes, double valor) {
-
+    @Override
+    public void addCredito(float valor) {
         this.creditos += valor;
-        acoes.addCredito(this.valor);
     }
 
-    public void gastarCredito(Acoes acoes, double valor) {
+    public void gastarCredito(float valor) {
+        this.creditos -= valor;
+    }
 
-        if (valor <= this.creditos) {
-            this.creditos -= valor;
-            acoes.gastarCredito(this.valor);
-        } else {
-            System.out.println("Saldo insuficiente!!!");
+    public void adcProd(Produto produto) {
+        this.prodcomp.add(produto);
+    }
+
+    public void removerProd(String nomeProduto) {
+        for (int i = 0; i <= prodcomp.size(); i++) {
+            if (prodcomp.get(i).getTitulo() == nomeProduto) {
+                this.prodcomp.remove(i);
+            }
         }
     }
 
-    public void adcProd(Acoes acoes, Produto produto) {
-
-        this.prodcomp.add(produto);
-        acoes.adcProd(this.produto);
-    }
-
-    public void removerProd(Acoes acoes, Estoque produto) {
-
-        this.prodcomp.remove(produto);
-        acoes.removerProd(this.produto);
-    }
-
-    public double getCreditos() {
+    public float getCreditos() {
         return creditos;
     }
 
-    public void setCreditos(double creditos) {
+    public void setCreditos(float creditos) {
         this.creditos = creditos;
     }
 

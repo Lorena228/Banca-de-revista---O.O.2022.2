@@ -19,7 +19,7 @@ public class Revista extends Produto {
   public String descricaoProduto() {
     return "Revista [titulo:" + titulo + "\neditora: " + editora + "\nedicao:" + edicao + "\ncategoria: "
         + categoria
-        + "\npreco: " + preco + "\nquantidade: " + quantidade + "\nartigo principal: " + artigoPrincipal + "]";
+        + "\npreco: " + preco + "\nquantidade: " + quantidade + "\nartigo principal: " + artigoPrincipal + "]\n";
   }
 
   public String getArtigoPrincipal() {

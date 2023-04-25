@@ -41,48 +41,54 @@ public class Estoque {
       this.listaProdutos.get(procurado).descricaoProduto();
       Scanner leitor = new Scanner(System.in);
       String mudanca;
-      System.out.println("Digite a característica que você deseja alterar (Ex.:\"edição:43\"):");
-      mudanca = leitor.nextLine().toString();
+      System.out.println("Digite a característica que você deseja alterar (Ex.:\"edicao:43\"):");
+      mudanca = leitor.nextLine().toString().toLowerCase();
       if (mudanca.contains(":")) {
         int indexfinal = mudanca.indexOf(":");
-        String sub = mudanca.substring(0, indexfinal);
+        String subString = mudanca.substring(0, indexfinal);
         Produto encontrado = this.listaProdutos.get(procurado);
-        switch (sub) {
+        switch (subString) {
           case "titulo":
-            sub = mudanca.substring(indexfinal + 1);
-            encontrado.setTitulo(sub);
+            subString = mudanca.substring(indexfinal + 1);
+            encontrado.setTitulo(subString);
             break;
 
           case "editora":
-            sub = mudanca.substring(indexfinal + 1);
-            encontrado.setEditora(sub);
+            subString = mudanca.substring(indexfinal + 1);
+            encontrado.setEditora(subString);
             break;
 
           case "edicao":
-            sub = mudanca.substring(indexfinal + 1);
-            encontrado.setEdicao(Integer.parseInt(sub));
+            subString = mudanca.substring(indexfinal + 1);
+            encontrado.setEdicao(Integer.parseInt(subString));
             break;
 
           case "categoria":
-            sub = mudanca.substring(indexfinal + 1);
-            encontrado.setCategoria(sub);
+            subString = mudanca.substring(indexfinal + 1);
+            encontrado.setCategoria(subString);
             break;
 
           case "preco":
-            sub = mudanca.substring(indexfinal + 1);
-            encontrado.setPreco(Float.parseFloat(sub));
+            subString = mudanca.substring(indexfinal + 1);
+            encontrado.setPreco(Float.parseFloat(subString));
             break;
 
           case "quantidade":
-            sub = mudanca.substring(indexfinal + 1);
-            encontrado.setQuantidade(Integer.parseInt(sub));
+            subString = mudanca.substring(indexfinal + 1);
+            encontrado.setQuantidade(Integer.parseInt(subString));
             break;
 
         }
+      } else {
+        System.out.println("Produto não cadastrado!");
       }
       leitor.close();
 
     }
+  }
+
+  public List<Produto> getListaProdutos() {
+    return listaProdutos;
   }
 
   public int getTotalUnidades() {

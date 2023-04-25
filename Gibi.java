@@ -25,7 +25,7 @@ public class Gibi extends Produto {
   public String descricaoProduto() {
     return "Gibi [titulo:" + titulo + "\neditora: " + editora + "\nedicao:" + edicao + "\ncategoria: "
         + categoria
-        + "\npreco: " + preco + "\nquantidade: " + quantidade + "\ntipo: " + tipo + "]";
+        + "\npreco: " + preco + "\nquantidade: " + quantidade + "\ntipo: " + tipo + "]\n";
   }
 
 }
