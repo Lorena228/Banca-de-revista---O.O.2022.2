@@ -23,14 +23,9 @@ public class Gibi extends Produto {
 
   @Override
   public String descricaoProduto() {
-    // TODO Auto-generated method stub
-    return super.descricaoProduto();
-  }
-
-  @Override
-  public void editarProduto() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'editarProduto'");
+    return "Gibi [titulo:" + titulo + "\neditora: " + editora + "\nedicao:" + edicao + "\ncategoria: "
+        + categoria
+        + "\npreco: " + preco + "\nquantidade: " + quantidade + "\ntipo: " + tipo + "]";
   }
 
 }

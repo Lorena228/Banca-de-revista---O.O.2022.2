@@ -34,14 +34,10 @@ public class Livro extends Produto {
 
   @Override
   public String descricaoProduto() {
-    // TODO Auto-generated method stub
-    return super.descricaoProduto();
-  }
-
-  @Override
-  public void editarProduto() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'editarProduto'");
+    return "Livro [titulo:" + titulo + "\neditora: " + editora + "\nedicao:" + edicao + "\ncategoria: "
+        + categoria
+        + "\npreco: " + preco + "\nquantidade: " + quantidade + "\nN° de páginas: " + npag + "\ntipo de capa:"
+        + tipoCapa + "]";
   }
 
 }

@@ -15,8 +15,6 @@ public abstract class Produto {
     this.quantidade = quantidade;
   }
 
-  public abstract void editarProduto();
-
   public abstract String descricaoProduto();
 
   public String getTitulo() {

@@ -3,14 +3,10 @@ public abstract class Pessoa {
     protected String nome;
     protected int cpf;
 
-    public Pessoa (String nome, int cpf) {
+    public Pessoa(String nome, int cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
-
-    public abstract void CadastrarPessoa();
-
-
 
     public String getNome() {
         return nome;
@@ -20,5 +16,4 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    
 }
