@@ -1,19 +1,24 @@
+import java.util.ArrayList;
+
 public class Venda implements InterfaceVender {
 
-  private String prodVendido;
+  private Produto prodVendido;
   private float desconto;
   private Vendedor vendedor;
   private Cliente cliente;
   private float precoTotal;
-  private Estoque estoque;
+  private Estoque estoque = new Estoque();
+  private ArrayList<Venda> vendapopular;
 
-  public Venda(String prodVendido, float desconto, Vendedor vendedor, Cliente cliente, float precoTotal,
-      Estoque estoque) {
-    this.prodVendido = prodVendido;
-    this.vendedor = vendedor;
-    this.cliente = cliente;
-    this.precoTotal = precoTotal;
-    this.estoque = estoque;
+  public Venda(Produto p, Vendedor vendedor, float desconto, Cliente cliente) {
+
+    if (verificarTitulo(p.titulo)) {
+      this.prodVendido = p;
+      this.vendedor = vendedor;
+      this.cliente = cliente;
+      this.desconto = desconto;
+    }
+
   }
 
   @Override
@@ -35,17 +40,17 @@ public class Venda implements InterfaceVender {
   @Override
   public void descntEstoque() {
     for (int i = 0; i <= estoque.listaProdutos.size(); i++) {
-      if (estoque.listaProdutos.get(i).getTitulo() == prodVendido) {
+      if (estoque.listaProdutos.get(i).getTitulo() == prodVendido.getTitulo()) {
         estoque.listaProdutos.get(i).setQuantidade(estoque.listaProdutos.get(i).getQuantidade() - 1);
       }
     }
   }
 
-  public String getProdVendido() {
+  public Produto getProdVendido() {
     return prodVendido;
   }
 
-  public void setProdVendido(String prodVendido) {
+  public void setProdVendido(Produto prodVendido) {
     this.prodVendido = prodVendido;
   }
 
@@ -57,7 +62,7 @@ public class Venda implements InterfaceVender {
     this.desconto = desconto;
   }
 
-  public Vendedor getVendedor() {
+  public Pessoa getVendedor() {
     return vendedor;
   }
 
@@ -65,7 +70,7 @@ public class Venda implements InterfaceVender {
     this.vendedor = vendedor;
   }
 
-  public Cliente getCliente() {
+  public Pessoa getCliente() {
     return cliente;
   }
 
@@ -79,6 +84,10 @@ public class Venda implements InterfaceVender {
 
   public void setPrecoTotal(float precoTotal) {
     this.precoTotal = precoTotal;
+  }
+
+  public void AdcVenda(ArrayList<Venda> vendapopular) {
+    this.vendapopular = vendapopular;
   }
 
 }

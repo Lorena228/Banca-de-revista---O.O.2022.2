@@ -10,11 +10,10 @@ public class Vendedor extends Pessoa {
         this.comissao = comissao;
     }
 
-    public Vendedor(String nome, String cpf, float comissao) {
+    public Vendedor(String nome, String cpf) {
         super(nome, cpf);
         this.nome = nome;
         this.cpf = cpf;
-        this.comissao = comissao;
     }
 
     @Override

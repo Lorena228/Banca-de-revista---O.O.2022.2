@@ -16,12 +16,13 @@ public class Estoque {
     for (int i = 0; i <= listaProdutos.size(); i++) {
       if (listaProdutos.get(i).getTitulo() == nomeProduto) {
         this.listaProdutos.remove(i);
+        System.out.println(nomeProduto + "removido com sucesso!");
       }
     }
   }
 
-  public void listarEstoque() {
-    for (int i = 0; i <= listaProdutos.size(); i++) {
+  public void listarProdutos() {
+    for (int i = 0; i < listaProdutos.size(); i++) {
       System.out.println(this.listaProdutos.get(i).descricaoProduto());
     }
   }
@@ -32,6 +33,7 @@ public class Estoque {
         return i;
       }
     }
+    System.out.println("Produto não cadastrado.");
     return -1;
   }
 
@@ -99,4 +101,13 @@ public class Estoque {
     this.totalUnidades = totalUnidades;
   }
 
+  public boolean isEmpty() {
+    return listaProdutos.isEmpty();
+  }
+
+  public void popularEstoque(ArrayList<Produto> produtos) {
+    for (Produto p : produtos) {
+      adcProduto(p);
+    }
+  }
 }
